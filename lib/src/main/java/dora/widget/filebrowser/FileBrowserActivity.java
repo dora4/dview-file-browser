@@ -79,12 +79,6 @@ public class FileBrowserActivity extends AppCompatActivity {
         mTextDialog = findViewById(R.id.mTextDialog);
     }
 
-    @BaseAdapter.ItemLayout(R.layout.item_file)
-    @BaseAdapter.ViewId({
-                    R.id.iv_file_type,
-                    R.id.tv_file_name,
-                    R.id.tv_file_last_modified
-    })
     public static class FileAdapter extends BaseAdapter<FNode> implements SectionIndexer {
 
         ImageView iv_file_type;
@@ -98,6 +92,20 @@ public class FileBrowserActivity extends AppCompatActivity {
         @Override
         public void addItems(List<FNode> datas) {
             super.addItems(generateLetters(datas));
+        }
+
+        @Override
+        public int getItem() {
+            return R.layout.item_file;
+        }
+
+        @Override
+        public int[] getViewIds() {
+            return new int[] {
+                    R.id.iv_file_type,
+                    R.id.tv_file_name,
+                    R.id.tv_file_last_modified
+            };
         }
 
         private List<FNode> generateLetters(List<FNode> fileables) {

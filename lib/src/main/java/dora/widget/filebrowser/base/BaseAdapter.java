@@ -28,7 +28,7 @@ public abstract class BaseAdapter<Bean> extends android.widget.BaseAdapter {
     public BaseAdapter(Context context) {
         this.mBeans = null;
         this.mInflater = null;
-        this.mInflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        this.mInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
     public BaseAdapter(Context context, List<Bean> beans) {
@@ -54,7 +54,7 @@ public abstract class BaseAdapter<Bean> extends android.widget.BaseAdapter {
     }
 
     public long getItemId(int position) {
-        return (long)position;
+        return (long) position;
     }
 
     public void addItem(Bean data) {
@@ -83,11 +83,10 @@ public abstract class BaseAdapter<Bean> extends android.widget.BaseAdapter {
     }
 
     public void replaceItems(int start, List<Bean> beans) {
-        for(Iterator iterator = beans.iterator(); iterator.hasNext(); ++start) {
+        for (Iterator<Bean> iterator = beans.iterator(); iterator.hasNext(); ++start) {
             Bean bean = (Bean) iterator.next();
             this.mBeans.set(start, bean);
         }
-
     }
 
     public void replace(List<Bean> beans) {
@@ -106,7 +105,7 @@ public abstract class BaseAdapter<Bean> extends android.widget.BaseAdapter {
     }
 
     public void removeItems(int start, int end) {
-        for(int i = start; i <= end; ++i) {
+        for (int i = start; i <= end; ++i) {
             this.mBeans.remove(i);
         }
 
@@ -119,19 +118,16 @@ public abstract class BaseAdapter<Bean> extends android.widget.BaseAdapter {
     }
 
     private View inflateView() throws NoSuchMethodException, IllegalArgumentException, IllegalAccessException, InvocationTargetException {
-        Class<?> adapterClazz = this.getClass();
-        ItemLayout adapterLayout = adapterClazz.getAnnotation(ItemLayout.class);
-        int layoutId = adapterLayout.value();
+        int layoutId = getItem();
         Class<?> inflaterClazz = LayoutInflater.class;
         Method inflateMethod = inflaterClazz.getMethod("inflate", Integer.TYPE, ViewGroup.class);
-        return (View)inflateMethod.invoke(this.mInflater, layoutId, null);
+        return (View) inflateMethod.invoke(this.mInflater, layoutId, null);
     }
 
-    private int[] getViewIds() {
-        Class<?> adapterClazz = this.getClass();
-        ViewId viewId = adapterClazz.getAnnotation(ViewId.class);
-        return viewId != null ? viewId.value() : null;
-    }
+
+    public abstract int getItem();
+
+    public abstract int[] getViewIds();
 
     protected abstract <T extends View> void onBindViewHolder(int position, Bean bean, ViewHolder<T> holder);
 
@@ -146,28 +142,28 @@ public abstract class BaseAdapter<Bean> extends android.widget.BaseAdapter {
 
             try {
                 this.mConvertView = this.inflateView();
-            } catch (IllegalArgumentException var9) {
-                var9.printStackTrace();
-            } catch (NoSuchMethodException var10) {
-                var10.printStackTrace();
-            } catch (IllegalAccessException var11) {
-                var11.printStackTrace();
-            } catch (InvocationTargetException var12) {
-                var12.printStackTrace();
+            } catch (IllegalArgumentException e) {
+                e.printStackTrace();
+            } catch (NoSuchMethodException e) {
+                e.printStackTrace();
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            } catch (InvocationTargetException e) {
+                e.printStackTrace();
             }
 
             int[] viewIds = this.getViewIds();
             int[] ids = viewIds;
             int length = viewIds.length;
 
-            for(int i = 0; i < length; ++i) {
+            for (int i = 0; i < length; ++i) {
                 int viewId = ids[i];
                 this.mViewHolder.getView(viewId);
             }
 
             this.mConvertView.setTag(this.mViewHolder);
         } else {
-            this.mViewHolder = (ViewHolder)this.mConvertView.getTag();
+            this.mViewHolder = (ViewHolder) this.mConvertView.getTag();
         }
 
         this.onBindViewHolder(position, mBeans.get(position), this.mViewHolder);
@@ -189,17 +185,5 @@ public abstract class BaseAdapter<Bean> extends android.widget.BaseAdapter {
             }
             return view;
         }
-    }
-
-    @Target({ElementType.TYPE})
-    @Retention(RetentionPolicy.RUNTIME)
-    public @interface ItemLayout {
-        @LayoutRes int value();
-    }
-
-    @Target({ElementType.TYPE})
-    @Retention(RetentionPolicy.RUNTIME)
-    public @interface ViewId {
-        int[] value();
     }
 }

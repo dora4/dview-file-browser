@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
@@ -23,8 +24,7 @@ public abstract class BaseAdapter<T> extends android.widget.BaseAdapter {
     private ViewHolder<View> mViewHolder;
 
     public BaseAdapter(Context context) {
-        this.mBeans = null;
-        this.mInflater = null;
+        this.mBeans = new ArrayList<>();
         this.mInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
@@ -33,7 +33,7 @@ public abstract class BaseAdapter<T> extends android.widget.BaseAdapter {
         this.bindDataSet(beans);
     }
 
-    public void bindDataSet(List<T> beans) {
+    public void bindDataSet(@NonNull List<T> beans) {
         if (this.mBeans == null) {
             this.mBeans = beans;
             this.notifyDataSetChanged();

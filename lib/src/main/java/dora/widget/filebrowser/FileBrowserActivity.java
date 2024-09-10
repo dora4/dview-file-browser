@@ -62,9 +62,11 @@ public class FileBrowserActivity extends AppCompatActivity {
         }
         initViews();
         XXPermissions.with(this)
-                .permission(Permission.MANAGE_EXTERNAL_STORAGE)
+                .permission(Permission.READ_MEDIA_IMAGES, Permission.READ_MEDIA_VIDEO, Permission.READ_MEDIA_AUDIO)
                 .request((permissions, allGranted) -> {
-                    initData();
+                    if (allGranted) {
+                        initData();
+                    }
                 });
     }
 

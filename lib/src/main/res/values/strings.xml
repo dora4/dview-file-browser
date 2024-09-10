@@ -1,8 +1,9 @@
 <resources>
-    <string name="total_space">"total "</string>
-    <string name="left_space">"left "</string>
+    <string name="total_space">"TOTAL "</string>
+    <string name="left_space">"LEFT "</string>
     <string name="choose_folder">Select Folder</string>
     <string name="select">Select</string>
     <string name="back">Back</string>
     <string name="cant_back">Can\'t go back to the previous level anymore</string>
+    <string name="my_files">My Files</string>
 </resources>

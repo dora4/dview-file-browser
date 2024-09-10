@@ -5,4 +5,5 @@
     <string name="select">选择</string>
     <string name="back">上一级</string>
     <string name="cant_back">不能再返回上一级了</string>
+    <string name="my_files">我的文件</string>
 </resources>

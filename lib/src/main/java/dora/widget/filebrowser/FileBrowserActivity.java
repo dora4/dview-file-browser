@@ -3,6 +3,7 @@ package dora.widget.filebrowser;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
@@ -24,6 +25,7 @@ import java.util.Locale;
 
 import dora.util.IoUtils;
 import dora.util.PinyinUtils;
+import dora.util.StatusBarUtils;
 import dora.util.TimeUtils;
 import dora.util.ToastUtils;
 import dora.widget.filebrowser.base.BaseAdapter;
@@ -55,6 +57,7 @@ public class FileBrowserActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_file_browser);
+        StatusBarUtils.setStatusBar(this, Color.parseColor("#67676a"), 255);
         Intent intent = getIntent();
         mAction = intent.getAction();
         if (mAction == null) {
@@ -83,9 +86,9 @@ public class FileBrowserActivity extends AppCompatActivity {
 
     public static class FileAdapter extends BaseAdapter<FNode> implements SectionIndexer {
 
-        ImageView iv_file_type;
-        TextView tv_file_name;
-        TextView tv_file_last_modified;
+        ImageView ivFileType;
+        TextView tvFileName;
+        TextView tvFileLastModified;
 
         public FileAdapter(Context context) {
             super(context);
@@ -159,12 +162,12 @@ public class FileBrowserActivity extends AppCompatActivity {
 
         @Override
         protected <VIEW extends View> void onBindViewHolder(int position, FNode fileable, ViewHolder<VIEW> holder) {
-            iv_file_type = (ImageView) holder.getView(R.id.iv_file_type);
-            tv_file_name = (TextView) holder.getView(R.id.tv_file_name);
-            tv_file_last_modified = (TextView) holder.getView(R.id.tv_file_last_modified);
-            tv_file_name.setText(fileable.getName());
-            tv_file_last_modified.setText(TimeUtils.getTimeString(fileable.lastModified(), "yyyy-MM-dd HH:mm"));
-            setFileIcon(iv_file_type, fileable.getName().substring(fileable.getName().lastIndexOf(".") + 1));
+            ivFileType = (ImageView) holder.getView(R.id.iv_file_type);
+            tvFileName = (TextView) holder.getView(R.id.tv_file_name);
+            tvFileLastModified = (TextView) holder.getView(R.id.tv_file_last_modified);
+            tvFileName.setText(fileable.getName());
+            tvFileLastModified.setText(TimeUtils.getTimeString(fileable.lastModified(), "yyyy-MM-dd HH:mm"));
+            setFileIcon(ivFileType, fileable.getName().substring(fileable.getName().lastIndexOf(".") + 1));
         }
     }
 

@@ -62,7 +62,7 @@ public class FileBrowserActivity extends AppCompatActivity {
         }
         initViews();
         XXPermissions.with(this)
-                .permission(Permission.Group.STORAGE)
+                .permission(Permission.MANAGE_EXTERNAL_STORAGE)
                 .request((permissions, allGranted) -> {
                     initData();
                 });

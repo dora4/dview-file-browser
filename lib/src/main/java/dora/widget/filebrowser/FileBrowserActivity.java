@@ -92,8 +92,8 @@ public class FileBrowserActivity extends AppCompatActivity {
         }
 
         @Override
-        public void addItems(List<FNode> datas) {
-            super.addItems(generateLetters(datas));
+        public void addItems(List<FNode> data) {
+            super.addItems(generateLetters(data));
         }
 
         @Override
@@ -240,7 +240,9 @@ public class FileBrowserActivity extends AppCompatActivity {
         final MyFolder myFolder = initFolder(new MyFolder(new File(IoUtils.getSdRoot())));
         mFileTree = myFolder.getAllChild();
         mAdapter = new FileAdapter(this);
-        mAdapter.addItems(mFileTree);
+        if (mFileTree != null && mFileTree.size() > 0) {
+            mAdapter.addItems(mFileTree);
+        }
         mFileListView.setAdapter(mAdapter);
         mFileListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -258,7 +260,9 @@ public class FileBrowserActivity extends AppCompatActivity {
                 } else if (fileable instanceof MyFolder) {
                     List<FNode> subFiles = ((MyFolder) fileable).enter();//拿到子目录所有文件
                     mAdapter.clear();
-                    mAdapter.addItems(subFiles);
+                    if (subFiles != null && subFiles.size() > 0) {
+                        mAdapter.addItems(subFiles);
+                    }
                     tvMainCurrPath.setText(fileable.getPath());
                 }
             }

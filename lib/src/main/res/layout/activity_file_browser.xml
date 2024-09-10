@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rl_main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:id="@+id/main_top_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:divider="@color/gray"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/main_titlebar"
+            layout="@layout/view_main_titlebar"
+            android:layout_width="match_parent"
+            android:layout_height="40.0dip" />
+
+        <LinearLayout
+            android:id="@+id/main_path"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#f067676a">
+
+            <TextView
+                android:id="@+id/tv_main_curr_path"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="start"
+                android:layout_margin="5dp"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:singleLine="true" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/main_bottom_layout"
+        android:layout_width="match_parent"
+        android:layout_height="30.0dip"
+        android:layout_alignParentBottom="true"
+        android:background="@color/theme_color">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_main_total_rom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_color_gray"
+                android:textSize="12.0sp" />
+
+            <TextView
+                android:id="@+id/tv_main_available_rom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20.0dip"
+                android:textColor="@color/text_color_gray"
+                android:textSize="12.0sp" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/main_bottom_layout"
+        android:layout_below="@id/main_top_layout">
+
+        <ListView
+            android:id="@+id/mFileListView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="@color/text_color_gray"
+            android:dividerHeight="0.1dip" />
+
+        <RelativeLayout
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center">
+
+            <TextView
+                android:id="@+id/mTextDialog"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/dialog_background"
+                android:gravity="center"
+                android:padding="5dp"
+                android:textColor="#fff5f5f5"
+                android:textSize="35sp"
+                android:visibility="gone" />
+
+            <dora.widget.filebrowser.view.CircularProgressBar
+                android:id="@+id/mProgressBar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/dialog_background"
+                android:padding="10.0dip"
+                android:visibility="gone"
+                app:dora_progressColor="@color/white"/>
+        </RelativeLayout>
+
+        <dora.widget.filebrowser.view.LetterView
+            android:id="@+id/mLetterView"
+            android:layout_width="25dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            app:letterview_textColor="@color/gray"
+            app:letterview_hoverTextColor="@color/darkgray"
+            android:background="@color/transparent" />
+    </FrameLayout>
+</RelativeLayout>

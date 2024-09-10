@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <declare-styleable name="LetterView">
+        <attr format="string|reference" name="letterview_letters"/>
+        <attr format="dimension|reference" name="letterview_textSize"/>
+        <attr format="color|reference" name="letterview_textColor"/>
+        <attr format="color|reference" name="letterview_hoverTextColor"/>
+        <attr format="reference" name="letterview_hoverBackgroundDrawable"/>
+        <attr format="boolean" name="letterview_textAllCaps"/>
+    </declare-styleable>
+    <declare-styleable name="CircularProgressBar">
+        <attr name="dora_progressWidth" format="dimension|reference" />
+        <attr name="dora_progressColor" format="color|reference" />
+    </declare-styleable>
+</resources>

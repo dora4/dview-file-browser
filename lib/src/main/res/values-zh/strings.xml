@@ -1,0 +1,8 @@
+<resources>
+    <string name="total_space">"总共 "</string>
+    <string name="left_space">"剩余 "</string>
+    <string name="choose_folder">请选择目录</string>
+    <string name="select">选择</string>
+    <string name="back">上一级</string>
+    <string name="cant_back">不能再返回上一级了</string>
+</resources>

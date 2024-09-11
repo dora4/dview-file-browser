@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="colorPrimary">#ff56575b</color>
     <color name="white">#ffffffff</color>
     <color name="graywhite">#ffeeeeee</color>
     <color name="text_color_black">#ff515151</color>
     <color name="text_color_gray">#ffb6b6b6</color>
     <color name="gray">#ff67676a</color>
     <color name="darkgray">#ff505153</color>
-    <color name="theme_color">#ff56575b</color>
     <color name="transparent">#00000000</color>
     <color name="cpv_default_color">#ff2196f3</color>
+
 </resources>

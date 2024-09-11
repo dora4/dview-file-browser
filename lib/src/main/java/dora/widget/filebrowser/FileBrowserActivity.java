@@ -3,7 +3,6 @@ package dora.widget.filebrowser;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
@@ -14,6 +13,7 @@ import android.widget.SectionIndexer;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import com.hjq.permissions.Permission;
 import com.hjq.permissions.XXPermissions;
@@ -57,7 +57,7 @@ public class FileBrowserActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_file_browser);
-        StatusBarUtils.setStatusBar(this, Color.parseColor("#67676a"), 255);
+        StatusBarUtils.setStatusBar(this, ContextCompat.getColor(this, R.color.colorPrimary), 255);
         Intent intent = getIntent();
         mAction = intent.getAction();
         if (mAction == null) {

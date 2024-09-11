@@ -44,7 +44,7 @@
         android:layout_width="match_parent"
         android:layout_height="30.0dip"
         android:layout_alignParentBottom="true"
-        android:background="@color/theme_color">
+        android:background="@color/colorPrimary">
 
         <LinearLayout
             android:layout_width="wrap_content"

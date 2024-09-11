@@ -79,7 +79,7 @@
             android:id="@+id/mFileListView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:divider="@color/fb_item_secondary_text"
+            android:divider="@color/fb_divider"
             android:dividerHeight="0.1dip" />
 
         <RelativeLayout

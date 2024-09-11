@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- 主色调 -->
     <color name="colorPrimary">#f067676a</color>
     <color name="colorPrimaryDark">#ff56575b</color>
     <color name="white">#ffffffff</color>
     <color name="fb_item_bg_press">#ffeeeeee</color>
     <color name="fb_item_main_text">#ff515151</color>
     <color name="fb_item_secondary_text">#ffb6b6b6</color>
+    <!-- 标题栏文字 -->
+    <color name="fb_title_bar_text">#ffb6b6b6</color>
+    <!-- 底部ROM文字 -->
     <color name="fb_bottom_rom_text">#ffb6b6b6</color>
     <color name="fb_divider">#ff67676a</color>
     <color name="fb_letter_text">#ff67676a</color>

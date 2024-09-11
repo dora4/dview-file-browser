@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#ff56575b</color>
+    <color name="colorPrimary">#f067676a</color>
+    <color name="colorPrimaryDark">#ff56575b</color>
     <color name="white">#ffffffff</color>
-    <color name="graywhite">#ffeeeeee</color>
-    <color name="text_color_black">#ff515151</color>
-    <color name="text_color_gray">#ffb6b6b6</color>
-    <color name="gray">#ff67676a</color>
-    <color name="darkgray">#ff505153</color>
-    <color name="transparent">#00000000</color>
-    <color name="cpv_default_color">#ff2196f3</color>
+    <color name="fb_item_bg_press">#ffeeeeee</color>
+    <color name="fb_item_main_text">#ff515151</color>
+    <color name="fb_item_secondary_text">#ffb6b6b6</color>
+    <color name="fb_bottom_rom_text">#ffb6b6b6</color>
+    <color name="fb_divider">#ff67676a</color>
+    <color name="fb_letter_text">#ff67676a</color>
+    <color name="fb_letter_text_press">#ff505153</color>
 
 </resources>

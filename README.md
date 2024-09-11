@@ -15,6 +15,6 @@ allprojects {
 dependencies {
     implementation("com.github.dora4:dora:1.2.24")
     implementation("com.github.getActivity:XXPermissions:18.2")
-    implementation("com.github.dora4:dview-file-browser:1.7")
+    implementation("com.github.dora4:dview-file-browser:1.8")
 }
 ```

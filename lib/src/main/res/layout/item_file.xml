@@ -33,7 +33,7 @@
             android:layout_height="wrap_content"
             android:ellipsize="end"
             android:singleLine="true"
-            android:textColor="@color/text_color_black"
+            android:textColor="@color/fb_item_main_text"
             android:textSize="20.0sp" />
 
         <TextView
@@ -43,7 +43,7 @@
             android:layout_marginLeft="5dp"
             android:layout_marginTop="5dp"
             android:singleLine="true"
-            android:textColor="@color/text_color_gray"
+            android:textColor="@color/fb_item_secondary_text"
             android:textSize="15.0sp" />
     </LinearLayout>
 </RelativeLayout>

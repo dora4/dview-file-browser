@@ -50,14 +50,13 @@ public class FileBrowserActivity extends AppCompatActivity {
     public static final String ACTION_CHOOSE_FILE = "dora.widget.filebrowser.action.CHOOSE_FILE";
     public static final String ACTION_CHOOSE_FOLDER = "dora.widget.filebrowser.action.CHOOSE_FOLDER";
     public static final String ACTION_CHOOSE_BOTH_FILE_AND_FOLDER = "dora.widget.filebrowser.action.CHOOSE_BOTH_FILE_AND_FOLDER";
-    public static final String EXTRA_PATH = "path";
     private String mAction;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_file_browser);
-        StatusBarUtils.setStatusBar(this, ContextCompat.getColor(this, R.color.colorPrimary), 255);
+        StatusBarUtils.setStatusBar(this, ContextCompat.getColor(this, R.color.colorPrimaryDark), 255);
         Intent intent = getIntent();
         mAction = intent.getAction();
         if (mAction == null) {
@@ -254,7 +253,7 @@ public class FileBrowserActivity extends AppCompatActivity {
                 if (fileable instanceof MyFile) {
                     if (mAction.equals(ACTION_CHOOSE_FILE) || mAction.equals(ACTION_CHOOSE_BOTH_FILE_AND_FOLDER)) {
                         Intent intent = new Intent();
-                        intent.putExtra(EXTRA_PATH, fileable.getPath());
+                        intent.putExtra(FileBrowser.EXTRA_PATH, fileable.getPath());
                         setResult(Activity.RESULT_OK, intent);
                         finish();
                     } else {
@@ -317,7 +316,7 @@ public class FileBrowserActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent();
-                intent.putExtra(EXTRA_PATH, tvMainCurrPath.getText().toString().trim());
+                intent.putExtra(FileBrowser.EXTRA_PATH, tvMainCurrPath.getText().toString().trim());
                 setResult(Activity.RESULT_OK, intent);
                 finish();
             }

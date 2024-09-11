@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:background="@color/colorPrimary" android:layout_width="fill_parent" android:layout_height="40.0dip"
+<RelativeLayout android:background="@color/colorPrimaryDark" android:layout_width="fill_parent" android:layout_height="40.0dip"
   xmlns:android="http://schemas.android.com/apk/res/android">
-    <TextView android:textSize="15.0sp" android:textColor="@color/text_color_gray" android:id="@+id/tv_titlebar_left" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="12.0dip" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
-    <TextView android:textSize="20.0sp" android:textColor="@color/text_color_gray" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/my_files" android:layout_centerHorizontal="true" android:layout_centerVertical="true" />
-    <TextView android:textSize="15.0sp" android:textColor="@color/text_color_gray" android:id="@+id/tv_titlebar_right" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="12.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    <TextView android:textSize="15.0sp" android:textColor="@color/fb_item_secondary_text" android:id="@+id/tv_titlebar_left" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="12.0dip" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+    <TextView android:textSize="20.0sp" android:textColor="@color/fb_item_secondary_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/my_files" android:layout_centerHorizontal="true" android:layout_centerVertical="true" />
+    <TextView android:textSize="15.0sp" android:textColor="@color/fb_item_secondary_text" android:id="@+id/tv_titlebar_right" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="12.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
 </RelativeLayout>

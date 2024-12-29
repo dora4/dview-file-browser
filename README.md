@@ -2,7 +2,7 @@ dview-file-browser
 ![Release](https://jitpack.io/v/dora4/dview-file-browser.svg)
 --------------------------------
 
-##### 卡名：Dora视图 File Browser 
+##### 卡名：Dora视图 FileBrowser 
 ###### 卡片类型：效果怪兽
 ###### 属性：暗
 ###### 星级：4

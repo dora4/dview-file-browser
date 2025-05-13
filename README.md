@@ -1,15 +1,9 @@
 dview-file-browser
 ![Release](https://jitpack.io/v/dora4/dview-file-browser.svg)
 --------------------------------
-![DORA视图 知识探索者](https://github.com/user-attachments/assets/1128af73-4bd0-4bed-b2ac-57c8f285478b)
 
-##### 卡名：Dora视图 FileBrowser 
-###### 卡片类型：效果怪兽
-###### 属性：暗
-###### 星级：4
-###### 种族：魔法师族
-###### 攻击力/防御力：400/1700
-###### 效果：此卡不会因为对方卡的效果而破坏，并可使其无效化。此卡攻击里侧守备表示的怪兽时，若攻击力高于其守备力，则给予对方此卡原攻击力的伤害，并抽一张卡。此卡通常召唤成功的场合，可以从卡组选择一张魔法或陷阱卡加入手卡，之后卡组洗切。
+#### 卡片
+![DORA视图 知识探索者](https://github.com/user-attachments/assets/1128af73-4bd0-4bed-b2ac-57c8f285478b)
 
 #### Gradle依赖配置
 

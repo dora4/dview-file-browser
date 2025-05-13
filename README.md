@@ -1,6 +1,7 @@
 dview-file-browser
 ![Release](https://jitpack.io/v/dora4/dview-file-browser.svg)
 --------------------------------
+![DORA视图 知识探索者](https://github.com/user-attachments/assets/1128af73-4bd0-4bed-b2ac-57c8f285478b)
 
 ##### 卡名：Dora视图 FileBrowser 
 ###### 卡片类型：效果怪兽

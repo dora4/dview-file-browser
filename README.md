@@ -3,7 +3,7 @@ dview-file-browser
 --------------------------------
 
 #### 卡片
-![DORA视图 知识探索者](https://github.com/user-attachments/assets/1128af73-4bd0-4bed-b2ac-57c8f285478b)
+![DORA视图 知识探索者](https://github.com/user-attachments/assets/3eb353fa-01cd-4ae8-8b3b-cb963c05c711)
 
 #### Gradle依赖配置
 

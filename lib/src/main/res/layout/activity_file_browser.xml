@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/rl_main_layout"
     android:layout_width="match_parent"
@@ -16,11 +15,45 @@
         android:divider="@color/dview_divider"
         android:orientation="vertical">
 
-        <include
-            android:id="@+id/main_titlebar"
-            layout="@layout/view_main_titlebar"
+        <!--        <include-->
+        <!--            android:id="@+id/main_titlebar"-->
+        <!--            layout="@layout/view_main_titlebar"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="40dp" />-->
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="40dp" />
+            android:layout_height="40dp"
+            android:background="@color/colorPrimaryDark">
+
+            <TextView
+                android:id="@+id/tv_titlebar_left"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="12dp"
+                android:textColor="@color/dview_title_bar_text"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="@string/my_files"
+                android:textColor="@color/dview_title_bar_text"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tv_titlebar_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="12dp"
+                android:textColor="@color/dview_title_bar_text"
+                android:textSize="15sp" />
+        </RelativeLayout>
 
         <LinearLayout
             android:id="@+id/main_path"
@@ -32,11 +65,11 @@
                 android:id="@+id/tv_main_curr_path"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:ellipsize="start"
                 android:layout_margin="5dp"
+                android:ellipsize="start"
+                android:singleLine="true"
                 android:textColor="@color/white"
-                android:textSize="15sp"
-                android:singleLine="true" />
+                android:textSize="15sp" />
         </LinearLayout>
     </LinearLayout>
 
@@ -108,7 +141,7 @@
                 android:background="@drawable/dialog_background"
                 android:padding="10dp"
                 android:visibility="gone"
-                app:dora_progressColor="@color/white"/>
+                app:dora_progressColor="@color/white" />
         </RelativeLayout>
 
         <dora.widget.filebrowser.view.LetterView
@@ -116,8 +149,8 @@
             android:layout_width="25dp"
             android:layout_height="match_parent"
             android:layout_gravity="end"
-            app:letterview_textColor="@color/dview_letter_text"
+            android:background="@android:color/transparent"
             app:letterview_hoverTextColor="@color/dview_letter_text_press"
-            android:background="@android:color/transparent" />
+            app:letterview_textColor="@color/dview_letter_text" />
     </FrameLayout>
 </RelativeLayout>

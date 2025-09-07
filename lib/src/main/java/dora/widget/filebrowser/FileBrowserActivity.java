@@ -62,6 +62,7 @@ public class FileBrowserActivity extends AppCompatActivity {
         if (mAction == null) {
             finish();
         }
+        initViews();
         XXPermissions.with(this)
                 .permission(
                         Permission.READ_MEDIA_IMAGES,
@@ -70,7 +71,6 @@ public class FileBrowserActivity extends AppCompatActivity {
                 )
                 .request((permissions, allGranted) -> {
                     if (allGranted) {
-                        initViews();
                         initData();
                     }
                 });

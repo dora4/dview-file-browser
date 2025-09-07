@@ -3,7 +3,6 @@ package dora.widget.filebrowser;
 import android.app.Activity;
 import android.content.Intent;
 
-import androidx.annotation.ColorRes;
 import androidx.annotation.NonNull;
 
 public class FileBrowser {

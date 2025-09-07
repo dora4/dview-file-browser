@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/rl_main_layout"
     android:layout_width="match_parent"
@@ -12,14 +13,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:divider="@color/fb_divider"
+        android:divider="@color/dview_divider"
         android:orientation="vertical">
 
         <include
             android:id="@+id/main_titlebar"
             layout="@layout/view_main_titlebar"
             android:layout_width="match_parent"
-            android:layout_height="40.0dip" />
+            android:layout_height="40dp" />
 
         <LinearLayout
             android:id="@+id/main_path"
@@ -42,7 +43,7 @@
     <RelativeLayout
         android:id="@+id/main_bottom_layout"
         android:layout_width="match_parent"
-        android:layout_height="30.0dip"
+        android:layout_height="30dp"
         android:layout_alignParentBottom="true"
         android:background="@color/colorPrimaryDark">
 
@@ -56,16 +57,16 @@
                 android:id="@+id/tv_main_total_rom"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/fb_bottom_rom_text"
-                android:textSize="12.0sp" />
+                android:textColor="@color/dview_bottom_rom_text"
+                android:textSize="12sp" />
 
             <TextView
                 android:id="@+id/tv_main_available_rom"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20.0dip"
-                android:textColor="@color/fb_bottom_rom_text"
-                android:textSize="12.0sp" />
+                android:layout_marginStart="20dp"
+                android:textColor="@color/dview_bottom_rom_text"
+                android:textSize="12sp" />
         </LinearLayout>
     </RelativeLayout>
 
@@ -79,8 +80,8 @@
             android:id="@+id/mFileListView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:divider="@color/fb_divider"
-            android:dividerHeight="0.1dip" />
+            android:divider="@color/dview_divider"
+            android:dividerHeight="0.1dp" />
 
         <RelativeLayout
             android:layout_width="80dp"
@@ -105,7 +106,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
                 android:background="@drawable/dialog_background"
-                android:padding="10.0dip"
+                android:padding="10dp"
                 android:visibility="gone"
                 app:dora_progressColor="@color/white"/>
         </RelativeLayout>
@@ -114,9 +115,9 @@
             android:id="@+id/mLetterView"
             android:layout_width="25dp"
             android:layout_height="match_parent"
-            android:layout_gravity="right"
-            app:letterview_textColor="@color/fb_letter_text"
-            app:letterview_hoverTextColor="@color/fb_letter_text_press"
+            android:layout_gravity="end"
+            app:letterview_textColor="@color/dview_letter_text"
+            app:letterview_hoverTextColor="@color/dview_letter_text_press"
             android:background="@android:color/transparent" />
     </FrameLayout>
 </RelativeLayout>

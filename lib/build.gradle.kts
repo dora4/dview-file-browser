@@ -6,11 +6,11 @@ plugins {
 
 android {
     namespace = "dora.widget.filebrowser"
-    compileSdk = 32
+    compileSdk = 34
 
     defaultConfig {
         minSdk = 21
-        targetSdk = 32
+        targetSdk = 34
     }
     buildTypes {
         release {
@@ -19,15 +19,17 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
 }
 
 dependencies {
-    implementation("androidx.core:core-ktx:1.13.1")
-    implementation("androidx.appcompat:appcompat:1.7.0")
-    implementation("com.github.dora4:dora:1.2.24")
+    // 构建系统（Gradle + AGP）和 appcompat 1.7.0 有兼容性问题，退回到1.6.1
+    implementation("androidx.appcompat:appcompat:1.6.1")
+    implementation("androidx.appcompat:appcompat-resources:1.6.1")
+
+    implementation("com.github.dora4:dora:1.3.14")
     implementation("com.github.getActivity:XXPermissions:18.2")
 }
 
@@ -38,7 +40,7 @@ afterEvaluate {
                 from(components["release"])
                 groupId = "com.github.dora4"
                 artifactId = rootProject.project.name
-                version = "1.10"
+                version = "1.12"
             }
         }
     }

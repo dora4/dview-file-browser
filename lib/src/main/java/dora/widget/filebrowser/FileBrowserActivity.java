@@ -64,7 +64,11 @@ public class FileBrowserActivity extends AppCompatActivity {
         }
         initViews();
         XXPermissions.with(this)
-                .permission(Permission.READ_MEDIA_IMAGES, Permission.READ_MEDIA_VIDEO, Permission.READ_MEDIA_AUDIO)
+                .permission(
+                        Permission.READ_MEDIA_IMAGES,
+                        Permission.READ_MEDIA_VIDEO,
+                        Permission.READ_MEDIA_AUDIO
+                )
                 .request((permissions, allGranted) -> {
                     if (allGranted) {
                         initData();
@@ -76,9 +80,8 @@ public class FileBrowserActivity extends AppCompatActivity {
         tvMainCurrPath = findViewById(R.id.tv_main_curr_path);
         tvMainTotalRom = findViewById(R.id.tv_main_total_rom);
         tvMainAvailableRom = findViewById(R.id.tv_main_available_rom);
-        View titleBar = findViewById(R.id.main_titlebar);
-        tvTitlebarLeft = titleBar.findViewById(R.id.tv_titlebar_left);
-        tvTitlebarRight = titleBar.findViewById(R.id.tv_titlebar_right);
+        tvTitlebarLeft = findViewById(R.id.tv_titlebar_left);
+        tvTitlebarRight = findViewById(R.id.tv_titlebar_right);
         mFileListView = findViewById(R.id.mFileListView);
         mLetterView = findViewById(R.id.mLetterView);
         mTextDialog = findViewById(R.id.mTextDialog);
@@ -113,14 +116,14 @@ public class FileBrowserActivity extends AppCompatActivity {
             };
         }
 
-        private List<FNode> generateLetters(List<FNode> fileables) {
-            for (FNode fileable : fileables) {
-                String sortLetter = PinyinUtils.getPinyinFromSentence(fileable.getName().substring(0, 1))
+        private List<FNode> generateLetters(List<FNode> fNodes) {
+            for (FNode fNode : fNodes) {
+                String sortLetter = PinyinUtils.getPinyinFromSentence(fNode.getName().substring(0, 1))
                         .toUpperCase();
-                fileable.setSortLetter(sortLetter);
+                fNode.setSortLetter(sortLetter);
             }
-            Collections.sort(fileables, PinyinComparator.get());
-            return fileables;
+            Collections.sort(fNodes, PinyinComparator.get());
+            return fNodes;
         }
 
         @Override
@@ -250,23 +253,23 @@ public class FileBrowserActivity extends AppCompatActivity {
         mFileListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
-                FNode fileable = (FNode) mAdapter.getItem(position);
-                if (fileable instanceof MyFile) {
+                FNode fNode = (FNode) mAdapter.getItem(position);
+                if (fNode instanceof MyFile) {
                     if (mAction.equals(ACTION_CHOOSE_FILE) || mAction.equals(ACTION_CHOOSE_BOTH_FILE_AND_FOLDER)) {
                         Intent intent = new Intent();
-                        intent.putExtra(FileBrowser.EXTRA_PATH, fileable.getPath());
+                        intent.putExtra(FileBrowser.EXTRA_PATH, fNode.getPath());
                         setResult(Activity.RESULT_OK, intent);
                         finish();
                     } else {
                         ToastUtils.showShort(FileBrowserActivity.this, getString(R.string.choose_folder));
                     }
-                } else if (fileable instanceof MyFolder) {
-                    List<FNode> subFiles = ((MyFolder) fileable).enter();//拿到子目录所有文件
+                } else if (fNode instanceof MyFolder) {
+                    List<FNode> subFiles = ((MyFolder) fNode).enter();//拿到子目录所有文件
                     mAdapter.clear();
                     if (subFiles != null && subFiles.size() > 0) {
                         mAdapter.addItems(subFiles);
                     }
-                    tvMainCurrPath.setText(fileable.getPath());
+                    tvMainCurrPath.setText(fNode.getPath());
                 }
             }
         });
@@ -330,13 +333,13 @@ public class FileBrowserActivity extends AppCompatActivity {
             File[] files = file.listFiles();
             if (files != null && files.length > 0) {
                 for (File f : files) {
-                    FNode fileable;
+                    FNode fNode;
                     if (f.isDirectory()) {
-                        fileable = new MyFolder(f);
+                        fNode = new MyFolder(f);
                     } else {
-                        fileable = new MyFile(f);
+                        fNode = new MyFile(f);
                     }
-                    rootFolder.addChild(fileable);
+                    rootFolder.addChild(fNode);
                 }
                 rootFolder.sort();
             } else {

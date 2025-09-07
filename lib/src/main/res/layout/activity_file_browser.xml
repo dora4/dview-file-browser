@@ -1,139 +1,157 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".FileBrowserActivity">
+    android:id="@+id/rl_main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
 
-    <data>
-
-    </data>
-
-    <RelativeLayout
-        android:id="@+id/rl_main_layout"
+    <LinearLayout
+        android:id="@+id/main_top_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/white">
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:divider="@color/dview_divider"
+        android:orientation="vertical">
 
-        <LinearLayout
-            android:id="@+id/main_top_layout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:divider="@color/dview_divider"
-            android:orientation="vertical">
-
-<!--            <include-->
-<!--                android:id="@+id/main_titlebar"-->
-<!--                layout="@layout/view_main_titlebar"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="40dp" />-->
-            <RelativeLayout
-                android:background="@color/colorPrimaryDark"
-                android:layout_width="match_parent"
-                android:layout_height="40dp">
-                <TextView android:textSize="15sp" android:textColor="@color/dview_title_bar_text" android:id="@+id/tv_titlebar_left" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="12dp" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
-                <TextView android:textSize="20sp" android:textColor="@color/dview_title_bar_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/my_files" android:layout_centerHorizontal="true" android:layout_centerVertical="true" />
-                <TextView android:textSize="15sp" android:textColor="@color/dview_title_bar_text" android:id="@+id/tv_titlebar_right" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="12dp" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
-            </RelativeLayout>
-
-            <LinearLayout
-                android:id="@+id/main_path"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/colorPrimary">
-
-                <TextView
-                    android:id="@+id/tv_main_curr_path"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:ellipsize="start"
-                    android:singleLine="true"
-                    android:textColor="@color/white"
-                    android:textSize="15sp" />
-            </LinearLayout>
-        </LinearLayout>
-
+        <!--            <include-->
+        <!--                android:id="@+id/main_titlebar"-->
+        <!--                layout="@layout/view_main_titlebar"-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="40dp" />-->
         <RelativeLayout
-            android:id="@+id/main_bottom_layout"
             android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:layout_alignParentBottom="true"
+            android:layout_height="40dp"
             android:background="@color/colorPrimaryDark">
 
-            <LinearLayout
+            <TextView
+                android:id="@+id/tv_titlebar_left"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:orientation="horizontal">
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="12dp"
+                android:textColor="@color/dview_title_bar_text"
+                android:textSize="15sp" />
 
-                <TextView
-                    android:id="@+id/tv_main_total_rom"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/dview_bottom_rom_text"
-                    android:textSize="12sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="@string/my_files"
+                android:textColor="@color/dview_title_bar_text"
+                android:textSize="20sp" />
 
-                <TextView
-                    android:id="@+id/tv_main_available_rom"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:textColor="@color/dview_bottom_rom_text"
-                    android:textSize="12sp" />
-            </LinearLayout>
+            <TextView
+                android:id="@+id/tv_titlebar_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="12dp"
+                android:textColor="@color/dview_title_bar_text"
+                android:textSize="15sp" />
         </RelativeLayout>
 
-        <FrameLayout
+        <LinearLayout
+            android:id="@+id/main_path"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary">
+
+            <TextView
+                android:id="@+id/tv_main_curr_path"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:ellipsize="start"
+                android:singleLine="true"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/main_bottom_layout"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimaryDark">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_main_total_rom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/dview_bottom_rom_text"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tv_main_available_rom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:textColor="@color/dview_bottom_rom_text"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/main_bottom_layout"
+        android:layout_below="@id/main_top_layout">
+
+        <ListView
+            android:id="@+id/mFileListView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_above="@id/main_bottom_layout"
-            android:layout_below="@id/main_top_layout">
+            android:divider="@color/dview_divider"
+            android:dividerHeight="0.1dp" />
 
-            <ListView
-                android:id="@+id/mFileListView"
+        <RelativeLayout
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center">
+
+            <TextView
+                android:id="@+id/mTextDialog"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:divider="@color/dview_divider"
-                android:dividerHeight="0.1dp" />
+                android:background="@drawable/dialog_background"
+                android:gravity="center"
+                android:padding="5dp"
+                android:textColor="#fff5f5f5"
+                android:textSize="35sp"
+                android:visibility="gone" />
 
-            <RelativeLayout
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_gravity="center">
-
-                <TextView
-                    android:id="@+id/mTextDialog"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/dialog_background"
-                    android:gravity="center"
-                    android:padding="5dp"
-                    android:textColor="#fff5f5f5"
-                    android:textSize="35sp"
-                    android:visibility="gone" />
-
-                <dora.widget.filebrowser.view.CircularProgressBar
-                    android:id="@+id/mProgressBar"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_centerHorizontal="true"
-                    android:layout_centerVertical="true"
-                    android:background="@drawable/dialog_background"
-                    android:padding="10dp"
-                    android:visibility="gone"
-                    app:dora_progressColor="@color/white" />
-            </RelativeLayout>
-
-            <dora.widget.filebrowser.view.LetterView
-                android:id="@+id/mLetterView"
-                android:layout_width="25dp"
+            <dora.widget.filebrowser.view.CircularProgressBar
+                android:id="@+id/mProgressBar"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_gravity="end"
-                android:background="@android:color/transparent"
-                app:letterview_hoverTextColor="@color/dview_letter_text_press"
-                app:letterview_textColor="@color/dview_letter_text" />
-        </FrameLayout>
-    </RelativeLayout>
-</layout>
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/dialog_background"
+                android:padding="10dp"
+                android:visibility="gone"
+                app:dora_progressColor="@color/white" />
+        </RelativeLayout>
+
+        <dora.widget.filebrowser.view.LetterView
+            android:id="@+id/mLetterView"
+            android:layout_width="25dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="end"
+            android:background="@android:color/transparent"
+            app:letterview_hoverTextColor="@color/dview_letter_text_press"
+            app:letterview_textColor="@color/dview_letter_text" />
+    </FrameLayout>
+</RelativeLayout>

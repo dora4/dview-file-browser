@@ -10,7 +10,6 @@ import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
-import androidx.databinding.DataBindingUtil;
 
 import com.hjq.permissions.Permission;
 import com.hjq.permissions.XXPermissions;
@@ -46,7 +45,7 @@ public class FileBrowserActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_file_browser);
+        binding = ActivityFileBrowserBinding.inflate(getLayoutInflater());
 
         StatusBarUtils.setStatusBar(this, ContextCompat.getColor(this, R.color.colorPrimaryDark), 255);
 

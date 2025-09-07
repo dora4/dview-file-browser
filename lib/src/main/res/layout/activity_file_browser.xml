@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/rl_main_layout"
     android:layout_width="match_parent"
@@ -15,45 +16,11 @@
         android:divider="@color/dview_divider"
         android:orientation="vertical">
 
-        <!--        <include-->
-        <!--            android:id="@+id/main_titlebar"-->
-        <!--            layout="@layout/view_main_titlebar"-->
-        <!--            android:layout_width="match_parent"-->
-        <!--            android:layout_height="40dp" />-->
-        <RelativeLayout
+        <include
+            android:id="@+id/main_titlebar"
+            layout="@layout/view_main_titlebar"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:background="@color/colorPrimaryDark">
-
-            <TextView
-                android:id="@+id/tv_titlebar_left"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="12dp"
-                android:textColor="@color/dview_title_bar_text"
-                android:textSize="15sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
-                android:text="@string/my_files"
-                android:textColor="@color/dview_title_bar_text"
-                android:textSize="20sp" />
-
-            <TextView
-                android:id="@+id/tv_titlebar_right"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:layout_marginRight="12dp"
-                android:textColor="@color/dview_title_bar_text"
-                android:textSize="15sp" />
-        </RelativeLayout>
+            android:layout_height="40dp" />
 
         <LinearLayout
             android:id="@+id/main_path"

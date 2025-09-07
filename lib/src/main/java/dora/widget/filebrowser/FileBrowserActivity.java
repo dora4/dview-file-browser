@@ -77,14 +77,14 @@ public class FileBrowserActivity extends AppCompatActivity {
     }
 
     private void initViews() {
-        tvMainCurrPath = findViewById(R.id.tv_main_curr_path);
-        tvMainTotalRom = findViewById(R.id.tv_main_total_rom);
-        tvMainAvailableRom = findViewById(R.id.tv_main_available_rom);
-        tvTitlebarLeft = findViewById(R.id.tv_titlebar_left);
-        tvTitlebarRight = findViewById(R.id.tv_titlebar_right);
-        mFileListView = findViewById(R.id.mFileListView);
-        mLetterView = findViewById(R.id.mLetterView);
-        mTextDialog = findViewById(R.id.mTextDialog);
+        tvMainCurrPath = (TextView) findViewById(R.id.tv_main_curr_path);
+        tvMainTotalRom = (TextView) findViewById(R.id.tv_main_total_rom);
+        tvMainAvailableRom = (TextView) findViewById(R.id.tv_main_available_rom);
+        tvTitlebarLeft = (TextView) findViewById(R.id.tv_titlebar_left);
+        tvTitlebarRight = (TextView) findViewById(R.id.tv_titlebar_right);
+        mFileListView = (ListView) findViewById(R.id.mFileListView);
+        mLetterView = (LetterView) findViewById(R.id.mLetterView);
+        mTextDialog = (TextView) findViewById(R.id.mTextDialog);
     }
 
     public static class FileAdapter extends BaseAdapter<FNode> implements SectionIndexer {
@@ -242,10 +242,10 @@ public class FileBrowserActivity extends AppCompatActivity {
     private void initData() {
         tvMainCurrPath.setText(IoUtils.getSdRoot());
         tvMainTotalRom.setText(
-                String.format(getString(R.string.total_space), IoUtils.getRomTotalSize(this))
+                String.format(ContextCompat.getString(this, R.string.total_space), IoUtils.getRomTotalSize(this))
         );
         tvMainAvailableRom.setText(
-                String.format(getString(R.string.left_space), IoUtils.getRomAvailableSize(this))
+                String.format(ContextCompat.getString(this, R.string.left_space), IoUtils.getRomAvailableSize(this))
         );
         final MyFolder myFolder = initFolder(new MyFolder(new File(IoUtils.getSdRoot())));
         mFileTree = myFolder.getAllChild();

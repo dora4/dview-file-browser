@@ -76,8 +76,9 @@ public class FileBrowserActivity extends AppCompatActivity {
         tvMainCurrPath = findViewById(R.id.tv_main_curr_path);
         tvMainTotalRom = findViewById(R.id.tv_main_total_rom);
         tvMainAvailableRom = findViewById(R.id.tv_main_available_rom);
-        tvTitlebarLeft = findViewById(R.id.tv_titlebar_left);
-        tvTitlebarRight = findViewById(R.id.tv_titlebar_right);
+        View titleBar = findViewById(R.id.main_titlebar);
+        tvTitlebarLeft = titleBar.findViewById(R.id.tv_titlebar_left);
+        tvTitlebarRight = titleBar.findViewById(R.id.tv_titlebar_right);
         mFileListView = findViewById(R.id.mFileListView);
         mLetterView = findViewById(R.id.mLetterView);
         mTextDialog = findViewById(R.id.mTextDialog);

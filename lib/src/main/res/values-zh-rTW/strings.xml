@@ -1,6 +1,6 @@
 <resources>
-    <string name="total_space">"總共 "</string>
-    <string name="left_space">"剩餘 "</string>
+    <string name="total_space">總共 %1$s</string>
+    <string name="left_space">剩餘 %1$s</string>
     <string name="choose_folder">請選擇目錄</string>
     <string name="select">選擇</string>
     <string name="back">上一級</string>

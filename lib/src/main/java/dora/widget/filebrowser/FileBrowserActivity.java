@@ -241,8 +241,12 @@ public class FileBrowserActivity extends AppCompatActivity {
 
     private void initData() {
         tvMainCurrPath.setText(IoUtils.getSdRoot());
-        tvMainTotalRom.setText(getString(R.string.total_space) + IoUtils.getRomTotalSize(this));
-        tvMainAvailableRom.setText(getString(R.string.left_space) + IoUtils.getRomAvailableSize(this));
+        tvMainTotalRom.setText(
+                String.format(getString(R.string.total_space), IoUtils.getRomTotalSize(this))
+        );
+        tvMainAvailableRom.setText(
+                String.format(getString(R.string.left_space), IoUtils.getRomAvailableSize(this))
+        );
         final MyFolder myFolder = initFolder(new MyFolder(new File(IoUtils.getSdRoot())));
         mFileTree = myFolder.getAllChild();
         mAdapter = new FileAdapter(this);
